@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2.html</title>
+    <!--다운로드 안받고, 내용복사에서 아래화일명으로 js만들어서 내용붙이기 
+        Download the compressed, production jQuery 3.6.0-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        'use strict';
+        //jQuery(document).ready(function(){});
+        
+        //jQuery로 html element를 객체로 가져올 때 $()사용 
+        //$() == jQuery()과 같음
+        //******** html element에 이벤트 달기
+        //******** $("선택자").이벤트(funciton(매개변수...){});
+        //window.onload()와 같음
+        $(document).ready(function(){
+            $("#price").css("color", 'red');
+            $("#ea").css("fontSize", "20pt");
+            $("#calcBtn").click(function(){
+                // let price = document.getElementById("price").value;
+                // let ea = document.getElementById("ea").value;
+                // let res = price * ea;
+                // document.getElementById("demo").innerHTML = res;
+
+                let price = Number($("#price").val());//정수실수 모두 Number
+                let ea = Number($("#ea").val());
+                if(isNaN(price)) {
+                    alert("금액은 숫자 입력");
+                    $("#price").select();
+                    $("#price").focus();
+                }
+                let res = price * ea;
+                $("#demo").html(res);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h2>상품가격</h2>    
+    <p>가격 <input type="text" name="price" id="price" value="25000" autofocus/></p>
+    <p>수량 <input type="text" name="ea" id="ea" value="2"/></p>
+    <p><input type="button" value="계산" id="calcBtn"/></p>
+    <hr>
+    <div id="demo"></div>
+    <hr>
+</body>
+</html>

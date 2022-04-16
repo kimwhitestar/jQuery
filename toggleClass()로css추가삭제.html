@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .blueWhite {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+    <script>
+        'use strict';
+        $(() => {
+            $('input[name="btn1"]').click(() => {
+                //style에서 만든 css의 이름으로 css추가
+                $("h2").addClass("blueWhite");
+            });
+            $('input[name="btn2"]').click(() => {
+                //style에서 만든 css의 이름으로 css추가
+                $("h2").removeClass("blueWhite");
+            });
+            $('input[name="btn3"]').click(() => {
+                //toggleClass() : addClass/removeClass 모든 기능 추가
+                $("h2").toggleClass("blueWhite");
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<p><br></p>
+<div class="container">
+    <h3>jquery css추가함수 연습1</h3>
+    <h2>jquery css추가함수 연습2</h2>
+    <p>이곳은 본문1</p>
+    <p>이곳은 본문2</p>
+    <input type="button" name="btn1" id="btn1" value="설정" class="btn btn-success form-control"/>
+    <input type="button" name="btn2" id="btn2" value="해제" class="btn btn-success form-control"/>
+    <input type="button" name="btn3" id="btn3" value="토글버튼" class="btn btn-success form-control"/>
+</div>
+<p><br></p>
+</body>
+</html>

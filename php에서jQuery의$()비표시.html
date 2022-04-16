@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test3.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+
+        //php에서 $를 쓸때, jQuery사용시 $()를 안쓰고 jQuery()로만 쓰도록 막기도 한다는데...
+        $.noConflict();
+
+        //onload없이 일반 익명함수로 선언후 버튼 클릭이벤트로 실행하는 방법
+        //$(function(){
+        jQuery(function(){
+            //$("#price").css("color", 'red');
+            jQuery("#price").css("color", 'red');
+            jQuery("#ea").css("fontSize", "20pt");
+            jQuery("#calcBtn").click(function(){
+                // let price = document.getElementById("price").value;
+                // let ea = document.getElementById("ea").value;
+                // let res = price * ea;
+                // document.getElementById("demo").innerHTML = res;
+
+                let price = Number(jQuery("#price").val());//정수실수 모두 Number
+                let ea = Number(jQuery("#ea").val());
+                if(isNaN(price)) {
+                    alert("금액은 숫자 입력");
+                    jQuery("#price").select();
+                    jQuery("#price").focus();
+                }
+                let res = numberWithCommas(price * ea);
+                //$("#demo").html(res);
+                jQuery("#demo").html(res);
+            });
+
+            //jQuery의 체인징기법
+            //$("#demo").css("color", "blue").css("fontSize", "30pt");
+            jQuery("#demo").css("color", "blue").css("fontSize", "30pt");
+        });
+
+        //콤마 추가
+        function numberWithCommas(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+    </script>
+</head>
+<body>
+    <h2>상품가격</h2>    
+    <p>가격 <input type="text" name="price" id="price" value="25000" autofocus/></p>
+    <p>수량 <input type="text" name="ea" id="ea" value="2"/></p>
+    <p><input type="button" value="계산" id="calcBtn"/></p>
+    <hr>
+    <div id="demo"></div>
+    <hr>
+</body>
+</html>

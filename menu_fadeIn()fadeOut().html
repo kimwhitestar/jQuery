@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>풀다운메뉴</title>
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      font-size: 15px;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .nav {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+    }
+    .nav li {
+      float: left;
+      width:150px;
+      position: relative;
+    }
+    .nav li a {
+      display:block;
+      height:20px;
+      padding:7px 8px;
+      color:#fff;
+      background-color: #333;
+      border-top:1px solid #069;
+      margin-top:-1px;
+    }
+    .nav li a:hover {
+      color: #069;
+      background-color: burlywood;
+    }
+
+    /* sub menu */
+    .nav ul {
+      display: none;
+      position: absolute;
+      left: 0px;
+      padding:0px;
+      list-style: none;
+    }
+    .nav ul li {
+      width:150px;
+    }
+    .nav ul a {
+      display: block;
+      height: 20px;
+      padding: 7px 8px;
+      color: #fff;
+      border:1px solid #069;
+    }
+  </style>
+  <script>
+    'use strict';
+    $(() => {
+        $(".nav li").hover(
+            () => {
+                $("ul", this).stop().fadeIn(1000);
+            },
+            () => {
+                $("ul", this).stop().fadeOut(1000);
+            }
+        );
+    });
+  </script>
+</head>
+<body>
+<div>
+  <ul class="nav">
+    <li>
+      <a href="#">Main Menu1</a>
+      <ul>
+        <li><a href="#">Sub1 Menu1</a></li>
+        <li><a href="#">Sub1 Menu2</a></li>
+        <li><a href="#">Sub1 Menu3</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Main Menu2</a>
+      <ul>
+        <li><a href="#">Sub2 Menu1</a></li>
+        <li><a href="#">Sub2 Menu2</a></li>
+        <li><a href="#">Sub2 Menu3</a></li>
+        <li><a href="#">Sub2 Menu4</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Main Menu3</a>
+      <ul>
+        <li><a href="#">Sub3 Menu1</a></li>
+        <li><a href="#">Sub3 Menu2</a></li>
+        <li><a href="#">Sub3 Menu3</a></li>
+        <li><a href="#">Sub3 Menu4</a></li>
+        <li><a href="#">Sub3 Menu5</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Main Menu4</a>
+      <ul>
+        <li><a href="#">Sub4 Menu1</a></li>
+        <li><a href="#">Sub4 Menu2</a></li>
+        <li><a href="#">Sub4 Menu3</a></li>
+        <li><a href="#">Sub4 Menu4</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Main Menu5</a>
+      <ul>
+        <li><a href="#">Sub5 Menu1</a></li>
+        <li><a href="#">Sub5 Menu2</a></li>
+        <li><a href="#">Sub5 Menu3</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

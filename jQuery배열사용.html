@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            let atom = $(".test").css('color', 'orange');
+        
+            //javascript : 배열로 저장된 객체를 색인번호로 불러와서 사용하기
+            let first = atom[0];
+            console.log(first);
+            first.style.color = 'red';
+
+            //jQuery : 배열로 저장된 객체를 색인번호로 불러와서 사용하기
+            let second = atom[1];
+            console.log(second);
+            $(second).css('color', 'lightgreen');
+
+            //반복구조(each) : (인덱스, 요소)
+            atom.each(function(idx, atomItem){
+                console.log(idx);
+                console.log(atomItem);
+
+                $(atomItem).css('backgroundColor', 'yellow');
+            });
+
+            //$("#c").css("color","red").css("backgroundColor", "black");
+            $("#c").css({"color":"red","backgroundColor":"black","fontSize":"20pt"});
+        });
+    </script>
+</head>
+<body>
+    <h2>사계</h2>
+    <p>작가 : 모차르트</p>    
+    <div id="a">봄</div>
+    <div>딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">여름</div>
+    <div>여름에<span class="test">맥심</span> 커피~</div>
+    <div>여름엔<span class="test main">맥~심 아이스~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">가을</div>
+    <div>몰라잉 가을 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">겨울</div>
+    <div>몰라잉 겨울 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span id="c" class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따<b id="b">라라</b>라~</span>단~</div>
+</body>
+</html>

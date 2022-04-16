@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그속성배열제어</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            //attribute속성접근 => element태그[attribute속성명="값"]
+            $("input[type='text']").css("color","blue");
+            $("input[type='password']").css({"color":"red","border":"1px solid blue"})
+            $("[name='name1']").css('color','orange');
+            $("[name='btnTest']").css('color','orange');
+            $("[readonly]").css("color","aqua");
+        });
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <form name="myForm">
+    <h2>폼 태그 연습</h2><br>
+    <div>
+        <div>
+            <label for="name1" readonly>성명</label>
+            <input type="text" name="name1" id="name1" value="홍길동"/><br>
+            <input type="text" name="name2" id="name2" value="김말숙"/><br>
+            <input type="password" name="pwd" id="pwd" value="1234567890"/><br>
+            <input type="button" name="btnTest" id="btnTest" value="연습"/>
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+

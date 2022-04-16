@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        'use strict';
+        //$( function(){} ); jQuery $()함수내의 annoymous(익명함수)함수식 function(){}을 
+        //$( () => {} ); jQuery $()함수내에 arrow함수식으로 표현시, () => {} 사용
+        $(()=>{
+            $('#btn1').click(()=>{
+                $('input[type="text"]').attr('disabled', false);
+                $('input[type="password"]').attr('disabled', false);
+            });
+            $('#btn2').click(()=>{
+                $('input[type="text"]').attr('disabled', 'disabled');
+                $('input[type="password"]').attr('disabled', 'disabled');
+            });
+            //활성화/비활성화
+            $('#btn3').click(()=>{
+                let flag1 = $('input[type="text"]');
+                let flag2 = $('input[type="password"]');
+                if(flag1.is(':enabled')){
+                    $(flag1).attr('disabled', 'disabled');
+                } else {
+                    $(flag1).attr('disabled', false);
+                }
+                if(flag2.is(':enabled')){
+                    $(flag2).attr('disabled', 'disabled');
+                } else {
+                    $(flag2).attr('disabled', false);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<p><br></p>
+<div class="container">
+    <div>
+        아이디 :
+        <input type="text" name="mid" id="mid" value="hkd1234" class="form-control"/><br>
+        비밀번호 :
+        <input type="password" name="pwd" id="pwd" value="1234567890" class="form-control"/><br>
+        성명 :
+        <input type="text" name="name" id="name" value="홍길동" class="form-control"/><br>
+        <input type="button" id="btn1" value="활성화" class="btn btn-success" />
+        <input type="button" id="btn2" value="비활성화" class="btn btn-success" />
+        <input type="button" id="btn3" value="활성화/비활성화" class="btn btn-success" />
+    </div>
+</div>
+<p><br></p>
+</body>
+</html>

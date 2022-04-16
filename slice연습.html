@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            let letDiv = $('div').css('color','lightgrey');
+            console.log(letDiv);
+
+            //slice(a,b)
+            letDiv.slice(2,5).css('color','orange');
+            //letDiv.slice(-3,-1).css('color','green');
+            letDiv.slice(-3).css('color','green');
+
+            //last-child() == last-child
+            $('#content > div:last-child').css('color','brown');
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+<div class="card-body" id="content">
+    <h2>slice연습</h2>
+    <div id="a1">item1</div>
+    <div id="a2">item2</div>
+    <div id="a3">item3</div>
+    <div id="a4">item4</div>
+    <div id="a5">item5</div>
+    <div id="a6(-5)">item6</div>
+    <div id="a7(-4)">item7</div>
+    <div id="a8(-3)">item8</div>
+    <div id="a9(-2)">item9</div>
+    <div id="a10(-1)">item10</div>
+</div>
+</div>
+</body>
+</html>

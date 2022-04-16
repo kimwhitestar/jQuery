@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //선택자 학습
+        $(document).ready(function(){
+            //전체 선택자(*)
+            $("*").css('color', 'blue'); //모든 글자를 blue로 지정
+            
+            //태그 선택자(html태그)
+            $('h2').css('backgroundColor', 'yellow');
+
+            //element id 선택자(#)
+            $("#a").css("fontSize", "30pt"); //같은 id가 여러개 있어도, 첫번째 id에만 적용
+
+            //class 선택자(.)
+            $(".test").css("backgroundColor", 'aqua').css('color', 'green');
+            $(".main").css("backgroundColor", 'pink').css('color', 'white');
+            //class="test main"일 경우, 뒤의 main만 적용됨
+
+            //div id=a 여러개 모두 적용
+            $('div#a').css('backgroundColor', 'lightgrey');
+
+            //포함(관계) 선택자
+            //자손 선택자(한칸 공백== 자손 의미)
+            $('div span').css('fontStyle', 'italic');
+
+            //자식 선택자(>)
+            $('div > b').css('fontSize', '35pt');
+            $('div > .main').css('backgroundColor', 'skyblue');
+            
+            //동등 선택자(,)
+            $('#a, #b, p').css('textDecoration', 'underline');
+        });
+    </script>
+</head>
+<body>
+    <h2>사계</h2>
+    <p>작가 : 모차르트</p>    
+    <div id="a">봄</div>
+    <div>딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">여름</div>
+    <div>여름에<span class="test">맥심</span> 커피~</div>
+    <div>여름엔<span class="test main">맥~심 아이스~</span></div>
+    <div>맥심 맥심<b><span class="main">아이스커피~</span></b></div>
+    <div id="a">가을</div>
+    <div>몰라잉 가을 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">겨울</div>
+    <div>몰라잉 <span id="b">겨울</span> 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<b><span class="main">따따라라라~</span></b>단~</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        'use strict';
+        $(function(){
+            let x=0, x2=300;
+            let y=0;
+
+            while(true) {
+                if(x2<=0) { alert("왼쪽으로 더이상 진행할 수 없음"); break;}
+                x2--;
+                $('#img2').animate({marginLeft: (x2*0.5)+'px'});
+            }
+
+            //id로 $("#moveRight").click(()=>{});
+            //'오른쪽이동'버튼클릭하면 img가 오른쪽으로 이동
+            $('input[name="moveRight"]').click(function(){
+                if(x>=10) { alert("오른쪽으로 더이상 진행할 수 없음"); return;}
+                x++;
+                $('#img1').animate({marginLeft: (x*50)+'px'});
+            });
+            //'왼쪽이동'버튼클릭하면 img가 왼쪽으로 이동
+            $('input[name="moveLeft"]').click(()=>{
+                if(x<=0) { alert("왼쪽으로 더이상 진행할 수 없음"); return;}
+                x--;
+                $('#img1').animate({marginLeft: (x*50)+'px'});
+            });
+            //'아래쪽이동'버튼클릭하면 img가 왼쪽으로 이동
+            $('input[name="moveBottom"]').click(()=>{
+                if(y>=10) { alert("아래쪽으로 더이상 진행할 수 없음"); return;}
+                y++;
+                $('#img1').animate({marginTop: (y*50)+'px'});
+            });
+            //'위쪽이동'버튼클릭하면 img가 왼쪽으로 이동
+            $('input[name="moveTop"]').click(()=>{
+                if(y<=0) { alert("위쪽으로 더이상 진행할 수 없음"); return;}
+                y--;
+                $('#img1').animate({marginTop: (y*50)+'px'});
+            });
+        });
+    </script>
+</head>
+<body>
+<p><br></p>
+<div class="container">
+    <h2>Animation연습</h2>
+    <hr/>
+    <input type="button" name="moveRight" id="moveRight" value="오른쪽이동"/>
+    <input type="button" name="moveLeft" id="moveLeft" value="왼쪽이동"/>
+    <input type="button" name="moveBottom" id="moveBottom" value="아래쪽이동"/>
+    <input type="button" name="moveTop" id="moveTop" value="위쪽이동"/>
+    <p><br></p>
+    <div>
+        <img src="../images/nimoZ.jpg" id="img1" width="100px" height="100px"/>
+        <img src="../images/nimo.jpg" id="img2" width="100px" height="100px"/>
+    </div>
+</div>
+<p><br></p>
+</body>
+</html>

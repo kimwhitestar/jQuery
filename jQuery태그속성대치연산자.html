@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            //attribute속성접근 => element태그[attribute속성명="값"]
+            $("input[type='text']").css("color","blue");
+            $("input[type='password']").css({"color":"red","border":"1px solid blue"})
+            $("[name='name1']").css('color','orange');
+            $("[name='btnTest']").css('color','orange');
+            $("[readonly]").css("color","aqua");
+
+            //완전일치(=)
+            $('a[href = "http://www.daum.net"]').css("color", "red");
+            //시작일치(^=)
+            $('a[href ^= "http://www.google"]').css("color", "pink");
+            //종료일치($=)
+            $('a[href $= "com"]').css("color", "purple");
+            //종료일치($=)
+            $('a[href $= "co.kr"]').css("color", "skyblue");
+            //포함(*=)
+            $('input[value *= "자"]').css("color", "lightgreen");
+            $('a[href *= "o"]').css("backgroundColor", "yellow");
+            //부정(!= or not) //not은 적용이 안됨ㅜㅜ
+            $('input[type != "text"]').css("fontSize", "30px");
+
+        });
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <form name="myForm">
+    <h2>폼 태그 연습</h2><br>
+    <div>
+        <div>
+            <label for="name1" readonly>성명</label>
+            <input type="text" name="name1" id="name1" value="홍길동"/><br>
+            <input type="text" name="name2" id="name2" value="김말숙"/><br>
+            <input type="password" name="pwd" id="pwd" value="1234567890"/><br>
+            <input type="button" name="btnTest" id="btnTest" value="글자연습"/>
+        </div>
+    </div>
+    <hr/>
+    <div>
+        <p><a href="http://www.naver.com">네이버</a></p>
+        <p><a href="http://www.daum.net">다음</a></p>
+        <p><a href="http://www.facebook.com">FaceBook</a></p>
+        <p><a href="http://www.google.co.kr">Google kr</a></p>
+        <p><a href="http://www.google.co.jp">Google jp</a></p>
+    </div>
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+

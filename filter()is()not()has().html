@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        'use strict';
+        $(document).ready(function(){
+            //filter
+            $('#content div').css('color', 'lightgrey').filter(function(idx,item){
+                return idx % 2 == 0; //짝수행
+            }).css('color','orange').filter('.test2').css('fontSize','31pt');
+
+            //is() 메소드
+            $('#one div').css('color', 'lightgrey').filter(function(idx,item){
+                return idx % 2 == 0; //짝수행
+            }).css('color','orange')
+            .filter(function(idx,item){
+                return $(item).is('.test2');
+            }).css('fontSize','25pt');
+
+            //not() 메소드
+            $('#two div').css('color','lightgrey')
+                .not('.test2').css('color', 'orange');
+
+            $('#two div').css('color','lightgrey')
+            .has('span').css('textDecoration', 'underline');
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+<div class="card-body" id="content">
+    <h2>사계</h2>
+    <p>작가 : 모차르트</p>    
+    <div id="a">봄</div>
+    <div class="test2">딴다라딴딴딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">여름</div>
+    <div>여름에<span class="test2">맥심</span> 커피~</div>
+    <div class="test2 main">여름엔<span class="test main">맥~심 아이스~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">가을</div>
+    <div>몰라잉 가을 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">겨울</div>
+    <div>몰라잉 겨울 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+</div>
+<div class="card-body" id="one">
+    <h2>사계</h2>
+    <p>작가 : 모차르트</p>    
+    <div id="a">봄</div>
+    <div class="test2">딴다라딴딴딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">여름</div>
+    <div>여름에<span class="test2">맥심</span> 커피~</div>
+    <div class="test2 main">여름엔<span class="test2 main">맥~심 아이스~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">가을</div>
+    <div>몰라잉 가을 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">겨울</div>
+    <div>몰라잉 겨울 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div class="test">딴딴다라딴딴딴딴~</div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+</div>
+<div class="card-body" id="two">
+    <h2>사계</h2>
+    <p>작가 : 모차르트</p>    
+    <div id="a">봄</div>
+    <div class="test2">딴다라딴딴딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">여름</div>
+    <div>여름에<span class="test">맥심</span> 커피~</div>
+    <div>여름엔<span class="test2 main">맥~심 아이스~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">가을</div>
+    <div>몰라잉 가을 딴다라<span class="test">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div>딴 딴딴~<span class="main">따따라라라~</span>단~</div>
+    <div id="a">겨울</div>
+    <div >몰라잉 겨울 딴다라<span class="test2">딴딴</span>딴다~</div>
+    <div>딴 <span class="test main">딴다라딴딴딴딴~</span></div>
+    <div class="test2">딴 딴딴~따따라라라~단~</div>
+</div>
+</div>
+</body>
+</html>

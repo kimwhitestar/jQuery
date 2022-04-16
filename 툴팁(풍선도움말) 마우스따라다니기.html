@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #toolTip {
+            display: none;
+            position: absolute;/*현재위치기준 절대위치*/
+            background-color: aliceblue;
+        }
+    </style>
+    <script>
+        'use strict';
+        $(()=>{
+            /*
+            //mouseover()와 비슷
+            $('h3 a').hover(()=>{
+                $("#toolTip").slideDown();
+            });
+            $('h3 a').mouseout(()=>{
+                $("#toolTip").slideUp();
+            });
+            */
+            //mouseover(),mousedown() 2개 다 한기능으로 해보기 
+            //== slideToggle()도 있음 == slideDown()과 slideUp() 같이 사용
+            $('h3 a').hover(
+                ()=>{
+                $("#toolTip").slideDown();
+                },
+                ()=>{
+                    $("#toolTip").slideUp();
+                }
+            ) //마우스움직이면 툴팁이 따라다님
+            .mousemove((e)=>{
+                $("#toolTip").css({left:e.pageX+0+"px", top:e.pageY+20+"px"});
+            });
+
+        });
+    </script>
+</head>
+<body>
+<p><br></p>
+<div class="container">
+    <h2>툴팁(풍선도움말)</h2>
+    <h3><a href="#">jQuery란</a> 무엇입니까?</h3>
+    <span id="toolTip">자바스크립트란?</span>
+
+</div>
+<p><br></p>
+</body>
+</html>
